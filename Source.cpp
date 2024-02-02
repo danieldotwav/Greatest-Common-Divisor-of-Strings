@@ -5,8 +5,6 @@ string gcdOfStrings(string str1, string str2);
 int gcd(int a, int b);
 
 int main() {
-	// For two strings s and t, we say "t divides s" if and only if s = t + ... + t 
-	// (i.e., t is concatenated with itself one or more times).
 	// Given two strings str1 and str2, return the largest string x such that x divides 
 	// both str1 and str2.
 
@@ -17,6 +15,26 @@ int main() {
 	// Test Case 2
 	std::cout << "String 1: ABABAB\nString 2: ABAB\nLongest Substring: " 
 		<< gcdOfStrings("ABABAB", "ABAB") << " // Expected: AB\n\n";
+
+	// Test Case 3: No common divisor
+	std::cout << "String 1: ABC\nString 2: DEF\nLongest Substring: "
+		<< gcdOfStrings("ABC", "DEF") << " // Expected: \n\n";
+
+	// Test Case 4: Identical strings
+	std::cout << "String 1: XYZXYZ\nString 2: XYZXYZ\nLongest Substring: "
+		<< gcdOfStrings("XYZXYZ", "XYZXYZ") << " // Expected: XYZXYZ\n\n";
+
+	// Test Case 5: One string is a multiple of the other
+	std::cout << "String 1: X\nString 2: XXXX\nLongest Substring: "
+		<< gcdOfStrings("X", "XXXX") << " // Expected: X\n\n";
+
+	// Test Case 6: Complex repeating pattern
+	std::cout << "String 1: ABCABCABC\nString 2: ABC\nLongest Substring: "
+		<< gcdOfStrings("ABCABCABC", "ABC") << " // Expected: ABC\n\n";
+
+	// Test Case 7: Strings with no repeating pattern but common divisor
+	std::cout << "String 1: AABBAABB\nString 2: AABB\nLongest Substring: "
+		<< gcdOfStrings("AABBAABB", "AABB") << " // Expected: AABB\n\n";
 
 	return 0;
 }
